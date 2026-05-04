@@ -1,59 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#0D1117">
+    android:background="#000000">
 
-    <TextView
+    <WebView
+        android:id="@+id/webview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="LOTATO"
-        android:textSize="36sp"
-        android:textColor="#F0A500"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginTop="24dp"/>
+        android:layout_height="match_parent" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="PrintBridge"
-        android:textSize="18sp"
-        android:textColor="#888888"
-        android:gravity="center"
-        android:layout_marginBottom="24dp"/>
-
-    <TextView
-        android:id="@+id/tvStatus"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#161B22"
-        android:padding="16dp"
-        android:textColor="#C9D1D9"
-        android:textSize="16sp"/>
-
-    <Button
-        android:id="@+id/btnStart"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:text="▶  DÉMARRER LE SERVEUR"
-        android:backgroundTint="#238636"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"/>
-
-    <Button
-        android:id="@+id/btnStop"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="8dp"
-        android:text="⏹  ARRÊTER"
-        android:backgroundTint="#DA3633"
-        android:textColor="#FFFFFF"/>
-
-</LinearLayout>
-
+</RelativeLayout>
