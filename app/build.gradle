@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.lotato.bridge'
+    namespace 'com.lotato.finalapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.lotato.bridge"
+        applicationId "com.lotato.finalapp"
         minSdk 21
         targetSdk 33
         versionCode 1
@@ -33,6 +33,4 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'org.nanohttpd:nanohttpd:2.3.1'
 }
-
