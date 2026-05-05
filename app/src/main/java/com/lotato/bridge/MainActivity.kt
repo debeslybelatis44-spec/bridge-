@@ -1,4 +1,4 @@
-package com.lotato.finalapp
+package com.lotato.bridge
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -88,14 +88,14 @@ class MainActivity : AppCompatActivity() {
 
                 service.printerInit(null)
 
-                // Header
+                // Header centré
                 service.setAlignment(1, null)
                 service.setFontSize(28f, null)
                 service.printText("$header\n", null)
                 service.setFontSize(18f, null)
                 service.printText("================================\n", null)
 
-                // Lignes
+                // Lignes à gauche
                 service.setAlignment(0, null)
                 service.setFontSize(20f, null)
                 if (lines != null) {
@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
-                // Footer
+                // Footer centré
                 if (footer.isNotEmpty()) {
                     service.setAlignment(1, null)
                     service.printText("================================\n", null)
@@ -112,7 +112,8 @@ class MainActivity : AppCompatActivity() {
                     service.printText("$footer\n", null)
                 }
 
-                service.printAndFeedPaper(80, null)
+                // Avancer le papier et couper
+                service.lineWrap(3, null)
                 service.cutPaper(null)
 
             } catch (e: Exception) {
@@ -120,7 +121,7 @@ class MainActivity : AppCompatActivity() {
                 runOnUiThread {
                     Toast.makeText(
                         this@MainActivity,
-                        "Erreur: ${e.message}",
+                        "Erreur impression: ${e.message}",
                         Toast.LENGTH_LONG
                     ).show()
                 }
@@ -135,7 +136,7 @@ class MainActivity : AppCompatActivity() {
                 service.setAlignment(0, null)
                 service.setFontSize(20f, null)
                 service.printText("$text\n", null)
-                service.printAndFeedPaper(60, null)
+                service.lineWrap(3, null)
                 service.cutPaper(null)
             } catch (e: Exception) {
                 e.printStackTrace()
