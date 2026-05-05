@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.lotato.finalapp'
+    namespace 'com.lotato.bridge'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.lotato.finalapp"
+        applicationId "com.lotato.bridge"
         minSdk 21
         targetSdk 33
         versionCode 1
