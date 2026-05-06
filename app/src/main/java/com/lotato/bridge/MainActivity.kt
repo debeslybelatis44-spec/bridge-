@@ -19,11 +19,18 @@ class MainActivity : AppCompatActivity() {
         override fun onConnected(service: SunmiPrinterService) {
             sunmiPrinterService = service
             runOnUiThread {
+                Toast.makeText(
+                    this@MainActivity,
+                    "✅ Imprimante prête",
+                    Toast.LENGTH_SHORT
+                ).show()
                 webView.evaluateJavascript(
-                    "window.dispatchEvent(new CustomEvent('sunmi-ready'));", null
+                    "window.dispatchEvent(new CustomEvent('sunmi-ready'));",
+                    null
                 )
             }
         }
+
         override fun onDisconnected() {
             sunmiPrinterService = null
         }
@@ -34,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initSunmiPrinterService()
+        initPrinter()
 
         webView = findViewById(R.id.webview)
         webView.settings.apply {
@@ -47,30 +54,39 @@ class MainActivity : AppCompatActivity() {
             setSupportZoom(false)
         }
 
-        webView.addJavascriptInterface(SunmiBridge(), "SunmiBridge")
+        webView.addJavascriptInterface(PrintBridge(), "SunmiBridge")
         webView.webViewClient = object : WebViewClient() {
             override fun onReceivedError(
-                view: WebView?, request: WebResourceRequest?, error: WebResourceError?
+                view: WebView?,
+                request: WebResourceRequest?,
+                error: WebResourceError?
             ) {
-                view?.loadData(pageSansInternet(), "text/html; charset=UTF-8", null)
+                view?.loadData(offlinePage(), "text/html; charset=UTF-8", null)
             }
         }
         webView.webChromeClient = WebChromeClient()
         webView.loadUrl("https://lotato1.onrender.com")
     }
 
-    private fun initSunmiPrinterService() {
+    private fun initPrinter() {
         try {
-            val ret = InnerPrinterManager.getInstance().bindService(this, innerPrinterCallback)
-            if (!ret) {
-                Toast.makeText(this, "Service imprimante non disponible", Toast.LENGTH_LONG).show()
+            val result = InnerPrinterManager.getInstance().bindService(
+                this,
+                innerPrinterCallback
+            )
+            if (!result) {
+                Toast.makeText(
+                    this,
+                    "Pas d'imprimante Sunmi détectée",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         } catch (e: InnerPrinterException) {
             e.printStackTrace()
         }
     }
 
-    inner class SunmiBridge {
+    inner class PrintBridge {
 
         @JavascriptInterface
         fun isConnected(): Boolean = sunmiPrinterService != null
@@ -80,7 +96,11 @@ class MainActivity : AppCompatActivity() {
             val service = sunmiPrinterService
             if (service == null) {
                 runOnUiThread {
-                    Toast.makeText(this@MainActivity, "Imprimante non connectée", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Imprimante non connectée",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
                 return
             }
@@ -91,14 +111,15 @@ class MainActivity : AppCompatActivity() {
                 val lines = json.optJSONArray("lines")
 
                 service.printerInit(null)
+
                 service.setAlignment(1, null)
                 service.setFontSize(28f, null)
                 service.printText("$header\n", null)
                 service.setFontSize(18f, null)
                 service.printText("================================\n", null)
+
                 service.setAlignment(0, null)
                 service.setFontSize(20f, null)
-
                 if (lines != null) {
                     for (i in 0 until lines.length()) {
                         service.printText("${lines.getString(i)}\n", null)
@@ -118,7 +139,11 @@ class MainActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 e.printStackTrace()
                 runOnUiThread {
-                    Toast.makeText(this@MainActivity, "Erreur: ${e.message}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Erreur: ${e.message}",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
         }
@@ -139,14 +164,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun pageSansInternet() = """
+    private fun offlinePage() = """
         <!DOCTYPE html><html><head><meta charset="UTF-8">
         <style>
           body{font-family:sans-serif;text-align:center;padding:40px;background:#0D1117;color:white}
           h1{color:#F0A500}
-          button{padding:14px 28px;background:#F0A500;border:none;color:#000;font-size:16px;border-radius:8px;margin-top:20px}
+          button{padding:14px 28px;background:#F0A500;border:none;color:#000;
+                 font-size:16px;border-radius:8px;margin-top:20px}
         </style></head><body>
-          <h1>LOTATO PRO</h1><p>Pas de connexion internet.</p>
+          <h1>LOTATO PRO</h1>
+          <p>Pas de connexion internet.</p>
           <button onclick="location.reload()">Réessayer</button>
         </body></html>
     """.trimIndent()
