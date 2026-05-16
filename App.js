@@ -1,20 +1,16 @@
 import React, { useRef } from 'react';
 import { WebView } from 'react-native-webview';
-import ThermalPrinter from 'react-native-thermal-receipt-printer';
+import RNPrint from 'react-native-print';
 import { Alert } from 'react-native';
 
 export default function App() {
   const webviewRef = useRef(null);
 
-  React.useEffect(() => {
-    ThermalPrinter.init().catch(err => console.warn(err));
-  }, []);
-
   const handleMessage = async (event) => {
     try {
       const data = JSON.parse(event.nativeEvent.data);
       if (data.type === 'PRINT_HTML') {
-        await ThermalPrinter.printHTML(data.html);
+        await RNPrint.print({ html: data.html });
         webviewRef.current?.postMessage(JSON.stringify({ type: 'PRINT_SUCCESS' }));
       }
     } catch (err) {
