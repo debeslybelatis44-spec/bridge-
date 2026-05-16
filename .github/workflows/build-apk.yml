@@ -9,18 +9,28 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
-      - uses: expo/expo-github-action@v8
-        with:
-          expo-version: latest
-          eas-version: latest
-          token: ${{ secrets.EXPO_TOKEN }}
-      - run: npm ci
-      - run: eas build --platform android --profile preview --non-interactive --output=./app-build.apk
-      - uses: actions/upload-artifact@v4
+
+      - name: Install expo & eas CLI globally
+        run: |
+          npm install -g expo-cli eas-cli
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Android APK with EAS
+        run: eas build --platform android --profile preview --non-interactive --output=./app-build.apk
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
         with:
           name: lotato-print.apk
           path: ./app-build.apk
