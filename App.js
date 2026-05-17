@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { WebView } from 'react-native-webview';
-import RNPrint from 'react-native-print';
+import * as Print from 'expo-print';
 import { Alert } from 'react-native';
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
     try {
       const data = JSON.parse(event.nativeEvent.data);
       if (data.type === 'PRINT_HTML') {
-        await RNPrint.print({ html: data.html });
+        await Print.printAsync({ html: data.html });
         webviewRef.current?.postMessage(JSON.stringify({ type: 'PRINT_SUCCESS' }));
       }
     } catch (err) {
