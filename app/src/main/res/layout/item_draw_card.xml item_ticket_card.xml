@@ -1,1 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/draw_card_bg"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvDrawName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_main"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:maxLines="2"/>
+
+    <TextView
+        android:id="@+id/tvDrawTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_dim"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginTop="6dp"/>
+
+    <TextView
+        android:id="@+id/tvDrawStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="11sp"
+        android:background="@color/danger"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:layout_marginTop="6dp"
+        android:visibility="gone"/>
+</LinearLayout>
 
