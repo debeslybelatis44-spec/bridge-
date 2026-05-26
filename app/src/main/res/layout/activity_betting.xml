@@ -1,1 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="←"
+            android:textColor="@color/text_dim"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            android:id="@+id/tvDrawTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/text_main"
+            android:textStyle="bold"
+            android:textSize="17sp"/>
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+        android:background="@color/glass_border"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_marginBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button android:id="@+id/btnBorlette"
+                        android:layout_width="wrap_content" android:layout_height="36dp"
+                        android:text="Borlette" android:textSize="13sp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/chip_active_bg"
+                        android:textColor="@color/white"/>
+                    <Button android:id="@+id/btnLotto"
+                        android:layout_width="wrap_content" android:layout_height="36dp"
+                        android:text="Lotto" android:textSize="13sp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/chip_bg"
+                        android:textColor="@color/text_dim"/>
+                    <Button android:id="@+id/btnSpecial"
+                        android:layout_width="wrap_content" android:layout_height="36dp"
+                        android:text="Jeux Spéciaux" android:textSize="13sp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/chip_bg"
+                        android:textColor="@color/text_dim"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:id="@+id/lottoGames"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone">
+
+                <Button android:id="@+id/btnBorlette2"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp"
+                    android:text="Borlette" android:textSize="12sp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/text_dim"/>
+                <Button android:id="@+id/btnLotto3"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp"
+                    android:text="Lotto 3" android:textSize="12sp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/text_dim"/>
+                <Button android:id="@+id/btnLotto4"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp"
+                    android:text="Lotto 4" android:textSize="12sp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/text_dim"/>
+                <Button android:id="@+id/btnLotto5"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp"
+                    android:text="Lotto 5" android:textSize="12sp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/text_dim"/>
+                <Button android:id="@+id/btnLotto4Auto"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp"
+                    android:text="L4 Auto" android:textSize="11sp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/success"/>
+                <Button android:id="@+id/btnLotto5Auto"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp"
+                    android:text="L5 Auto" android:textSize="11sp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/success"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/specialGames"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone">
+
+                <Button android:id="@+id/btnBO"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp"
+                    android:text="BO" android:textSize="13sp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/accent"/>
+                <Button android:id="@+id/btnGRAP"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp"
+                    android:text="GRAP" android:textSize="13sp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/accent"/>
+                <Button android:id="@+id/btnMariage"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp"
+                    android:text="Mariage" android:textSize="12sp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/text_dim"/>
+                <Button android:id="@+id/btnMariageAuto"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp"
+                    android:text="M. Auto" android:textSize="12sp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/success"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <Button android:id="@+id/btnN0" android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="36dp" android:text="N0" android:textSize="11sp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/secondary"/>
+                <Button android:id="@+id/btnN1" android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="36dp" android:text="N1" android:textSize="11sp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/secondary"/>
+                <Button android:id="@+id/btnN2" android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="36dp" android:text="N2" android:textSize="11sp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/secondary"/>
+                <Button android:id="@+id/btnN3" android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="36dp" android:text="N3" android:textSize="11sp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/secondary"/>
+                <Button android:id="@+id/btnN4" android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="36dp" android:text="N4" android:textSize="11sp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/secondary"/>
+                <Button android:id="@+id/btnN5" android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="36dp" android:text="N5" android:textSize="11sp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/secondary"/>
+                <Button android:id="@+id/btnN6" android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="36dp" android:text="N6" android:textSize="11sp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/secondary"/>
+                <Button android:id="@+id/btnN7" android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="36dp" android:text="N7" android:textSize="11sp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/secondary"/>
+                <Button android:id="@+id/btnN8" android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="36dp" android:text="N8" android:textSize="11sp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/secondary"/>
+                <Button android:id="@+id/btnN9" android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="36dp" android:text="N9" android:textSize="11sp"
+                    android:background="@drawable/chip_bg" android:textColor="@color/secondary"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <EditText
+                    android:id="@+id/etNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="2"
+                    android:hint="Nimewo"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/text_dim"
+                    android:background="@drawable/input_bg"
+                    android:padding="12dp"
+                    android:inputType="number"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_marginEnd="8dp"/>
+
+                <EditText
+                    android:id="@+id/etAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="2"
+                    android:hint="Montan (G)"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/text_dim"
+                    android:background="@drawable/input_bg"
+                    android:padding="12dp"
+                    android:inputType="number"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_marginEnd="8dp"
+                    android:imeOptions="actionDone"/>
+
+                <Button
+                    android:id="@+id/btnAddBet"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:text="+"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_primary_bg"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fich an kou"
+                        android:textColor="@color/text_main"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/tvItemCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 jwèt"
+                        android:textColor="@color/text_dim"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 Gdes"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <Button
+                    android:id="@+id/btnPrint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="🖨 Enprime"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:background="@drawable/btn_success_bg"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cartList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
 
