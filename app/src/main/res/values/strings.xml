@@ -1,1 +1,42 @@
+<resources>
+    <string name="app_name">LOTATO PRO</string>
+    <string name="login_title">LOTATO PRO</string>
+    <string name="login_subtitle">Système de gestion de loterie</string>
+    <string name="username_hint">Identifiant</string>
+    <string name="password_hint">Mot de passe</string>
+    <string name="login_btn">Se connecter</string>
+    <string name="role_agent">Agent</string>
+    <string name="role_supervisor">Superviseur</string>
+    <string name="role_owner">Propriétaire</string>
+    <string name="nav_home">Jwèt</string>
+    <string name="nav_history">Istorik</string>
+    <string name="nav_reports">Rapò</string>
+    <string name="nav_winners">Ganyen</string>
+    <string name="select_draw">Chwazi Tiraj</string>
+    <string name="betting_screen">Pari</string>
+    <string name="cart_title">Fich an kou</string>
+    <string name="print_ticket">Enprime Fich</string>
+    <string name="add_bet">Ajoute</string>
+    <string name="number_hint">Nimewo</string>
+    <string name="amount_hint">Montan (G)</string>
+    <string name="total">Total</string>
+    <string name="empty_cart">Panye vid</string>
+    <string name="logout">Dekonekte</string>
+    <string name="multi_draw">Plizyè Tiraj</string>
+    <string name="continue_multi">Kontinye ak Tiraj yo</string>
+    <string name="error_invalid_amount">Montan pa valid</string>
+    <string name="error_number_blocked">Nimewo bloke</string>
+    <string name="error_draw_closing">Tiraj sa a ap rantre nan 3 minit</string>
+    <string name="history_title">Istorik Tikè</string>
+    <string name="reports_title">Rapò Jodi a</string>
+    <string name="winners_title">Tikè Ganyen</string>
+    <string name="game_borlette">Borlette</string>
+    <string name="game_lotto">Lotto</string>
+    <string name="game_special">Spesyal</string>
+    <string name="printer_not_found">Imprimante Sunmi introuvable</string>
+    <string name="print_success">Ticket imprimé avec succès</string>
+    <string name="print_error">Erreur d\'impression</string>
+    <string name="connecting">Connexion en cours…</string>
+    <string name="version">Version 6.0</string>
+</resources>
 
