@@ -1,1 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/login_card_bg"
+            android:padding="32dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="★"
+                android:textSize="48sp"
+                android:textColor="@color/primary"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LOTATO PRO"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:gravity="center"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Système de gestion de loterie"
+                android:textSize="14sp"
+                android:textColor="@color/text_dim"
+                android:gravity="center"
+                android:layout_marginBottom="28dp"/>
+
+            <TextView
+                android:id="@+id/tvError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FF416C"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Identifiant"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_dim"
+                android:background="@drawable/input_bg"
+                android:padding="16dp"
+                android:inputType="text"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Mot de passe"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_dim"
+                android:background="@drawable/input_bg"
+                android:padding="16dp"
+                android:inputType="textPassword"
+                android:layout_marginBottom="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/btnRoleAgent"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:text="Agent"
+                    android:textColor="@color/white"
+                    android:background="@drawable/chip_active_bg"/>
+
+                <Button
+                    android:id="@+id/btnRoleSupervisor"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:text="Superviseur"
+                    android:textColor="@color/text_dim"
+                    android:textSize="11sp"
+                    android:background="@drawable/chip_bg"/>
+
+                <Button
+                    android:id="@+id/btnRoleOwner"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:text="Propriétaire"
+                    android:textColor="@color/text_dim"
+                    android:textSize="11sp"
+                    android:background="@drawable/chip_bg"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Se connecter"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:background="@drawable/btn_primary_bg"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="© 2024 LOTATO PRO · Version 6.0"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_marginTop="24dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
 
