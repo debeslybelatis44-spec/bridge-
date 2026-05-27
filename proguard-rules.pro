@@ -1,0 +1,4 @@
+-keep class com.lotato.pro.** { *; }
+-keep class com.sunmi.peripheral.printer.** { *; }
+-keepattributes *Annotation*
+-keepattributes Signature
